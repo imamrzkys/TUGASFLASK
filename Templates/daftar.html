@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>Daftar - Mochi Lily Shop</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <!-- Start Main Top -->
+    <div class="main-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="custom-select-box">
+                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="IDR">
+                            <option>IDR</option>
+                            <option>USD</option>
+                            <option>EUR</option>
+                        </select>
+                    </div>
+                    <div class="right-phone-box">
+                        <p>Hubungi Kami :+62 <a href="/contact"> 831 7623 5143</a></p>
+                    </div>
+                    <div class="our-link">
+                        <ul>
+                            <li><a href="/my-account"><i class="fa fa-user s_color"></i> Profil</a></li>
+                            <li><a href="/contact"><i class="fas fa-location-arrow"></i> Lokasi</a></li>
+                            <li><a href="/contact"><i class="fas fa-headset"></i> Kontak</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="login-box">
+                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In" onchange="if (this.value) window.location.href=this.value;">
+                            <option value="">Pilih Opsi</option>
+                            <option value="{{ url_for('login') }}">Masuk</option>
+                            <option value="{{ url_for('register') }}">Daftar</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Top -->
+
+    <div class="contact-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="contact-form-right">
+                        <h2>DAFTAR AKUN BARU</h2>
+                        <p>Silakan lengkapi form pendaftaran di bawah ini</p>
+                        <form method="POST" action="{{ url_for('register') }}">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="username" placeholder="Nama Lengkap" required data-error="Silakan masukkan nama Anda">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required data-error="Silakan masukkan email yang valid">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required data-error="Silakan masukkan password">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Konfirmasi Password" required data-error="Silakan konfirmasi password">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="submit-button text-center">
+                                        <button class="btn hvr-hover" id="submit" type="submit">Daftar</button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="text-center mt-4">
+                            <p>Sudah punya akun? <a href="{{ url_for('login') }}">Masuk di sini</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <div class="contact-form-right">
+                        <h2>KEUNTUNGAN MENJADI MEMBER</h2>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="list-group">
+                                    <li class="list-group-item"><i class="fas fa-check text-success"></i> Akses ke promo eksklusif member</li>
+                                    <li class="list-group-item"><i class="fas fa-check text-success"></i> Point rewards setiap transaksi</li>
+                                    <li class="list-group-item"><i class="fas fa-check text-success"></i> Update produk terbaru</li>
+                                    <li class="list-group-item"><i class="fas fa-check text-success"></i> Gratis ongkir untuk minimum pembelian</li>
+                                    <li class="list-group-item"><i class="fas fa-check text-success"></i> Layanan pelanggan prioritas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Footer  -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Jam Kerja</h3>
+							<ul class="list-time">
+								<li>Senin - Jumat: 08.00 - 17.00</li> <li>Sabtu: 10.00 - 20.00</li> <li>Minggu: <span>Tutup</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Buletin</h3>
+							<form class="newsletter-box">
+								<div class="form-group">
+									<input class="" type="email" name="Email" placeholder="Alamat Email*" />
+									<i class="fa fa-envelope"></i>
+								</div>
+								<button class="btn hvr-hover" type="submit">Kirim</button>
+							</form>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Media Sosial</h3>
+							<p>Temukan kami di media sosial.</p>
+							<ul>
+                                <li><a href="/contact"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="/contact"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="/contact"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="/contact"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="/contact"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                                <li><a href="/contact"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                <li><a href="/contact"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            </ul>
+						</div>
+					</div>
+				</div>
+				<hr>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-widget">
+                            <h4>Tentang Mochi Lily Shop</h4>
+                            <p>Mochi Lily Shop adalah toko online terpercaya yang menyediakan berbagai produk segar berkualitas tinggi. Kami berkomitmen memberikan pengalaman belanja terbaik dengan produk-produk pilihan dan layanan prima.</p> 
+							<p>Temukan kemudahan berbelanja kebutuhan sehari-hari Anda di Mochi Lily Shop.</p> 							
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link">
+                            <h4>Informasi</h4>
+                            <ul>
+                                <li><a href="/about">Tentang Kami</a></li>
+                                <li><a href="/contact">Layanan Pelanggan</a></li>
+                                <li><a href="/shop">Peta Situs</a></li>
+                                <li><a href="/shop">Syarat &amp; Ketentuan</a></li>
+                                <li><a href="/shop">Kebijakan Privasi</a></li>
+                                <li><a href="/shop">Informasi Pengiriman</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link-contact">
+                            <h4>Hubungi Kami</h4>
+                            <ul>
+                                <li>
+                                    <p><i class="fas fa-map-marker-alt"></i>Alamat: Sukamahi RT 05 RW 06 <br>Ds. SagaraCipta,Kec. Ciparay<br> Kabupaten Bandung, Jawa Barat 40551 </p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-phone-square"></i>Telepon: <a href="/contact">+62-831-7623-5143</a></p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="/contact">MochililyShop@gmail.com</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer  -->
+
+    <!-- Start copyright  -->
+    <div class="footer-copyright">
+        <p class="footer-company">All Rights Reserved. &copy; 2025 <a href="/shop">MochililyShop</a> Design By :
+            <a href="/shop">html design</a></p>
+    </div>
+    <!-- End copyright  -->
+
+    <a href="/shop" id="back-to-top" title="Kembali ke atas" style="display: none;">&uarr;</a>
+
+    <!-- ALL JS FILES -->
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="../static/js/jquery.superslides.min.js"></script>
+    <script src="../static/js/bootstrap-select.js"></script>
+    <script src="../static/js/inewsticker.js"></script>
+    <script src="../static/js/bootsnav.js."></script>
+    <script src="../static/js/images-loded.min.js"></script>
+    <script src="../static/js/isotope.min.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/baguetteBox.min.js"></script>
+    <script src="../static/js/form-validator.min.js"></script>
+    <script src="../static/js/contact-form-script.js"></script>
+    <script src="../static/js/custom.js"></script>
+</body>
+
+</html>

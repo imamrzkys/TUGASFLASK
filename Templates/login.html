@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<!-- Basic -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>Login - Toko Mochi Lily</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+
+</head>
+
+<body>
+    <!-- Start Main Top -->
+    <header class="main-header">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/"><img src="../static/images/logo.png" class="logo" alt=""></a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item"><a class="nav-link" href="/">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">Tentang Kami</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/shop">Toko</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Main Top -->
+
+    <!-- Start Login  -->
+    <div class="cart-box-main">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Login</h2>
+                            <form action="{{ url_for('login') }}" method="POST">
+                                <div class="form-group">
+                                    <label for="username">Username:</label>
+                                    <input type="text" class="form-control" id="username" name="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password:</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="remember">
+                                    <label class="form-check-label" for="remember">Ingat Saya</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                            </form>
+                            <div class="text-center mt-3">
+                                <p>Belum punya akun? <a href="/register">Daftar disini</a></p>
+                                <p><a href="/forgot-password">Lupa Password?</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Login -->
+
+    <!-- Start Footer  -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Jam Kerja</h3>
+                            <ul class="list-time">
+                                <li>Senin - Jumat: 08.00 - 17.00</li> <li>Sabtu: 10.00 - 20.00</li> <li>Minggu: <span>Tutup</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Buletin</h3>
+                            <form class="newsletter-box">
+                                <div class="form-group">
+                                    <input class="" type="email" name="Email" placeholder="Alamat Email*" />
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <button class="btn hvr-hover" type="submit">Kirim</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Media Sosial</h3>
+                            <p>Temukan kami di media sosial.</p>
+                            <ul>
+                                <li><a href="/contact"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="/contact"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="/contact"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="/contact"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="/contact"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                                <li><a href="/contact"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                <li><a href="/contact"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-widget">
+                            <h4>Tentang Mochi Lily Shop</h4>
+                            <p>Mochi Lily Shop adalah toko online terpercaya yang menyediakan berbagai produk segar berkualitas tinggi. Kami berkomitmen memberikan pengalaman belanja terbaik dengan produk-produk pilihan dan layanan prima.</p> 
+                            <p>Temukan kemudahan berbelanja kebutuhan sehari-hari Anda di Mochi Lily Shop.</p> 
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link">
+                            <h4>Informasi</h4>
+                            <ul>
+                                <li><a href="/about">Tentang Kami</a></li>
+                                <li><a href="/contact">Layanan Pelanggan</a></li>
+                                <li><a href="/shop">Peta Situs</a></li>
+                                <li><a href="/shop">Syarat &amp; Ketentuan</a></li>
+                                <li><a href="/shop">Kebijakan Privasi</a></li>
+                                <li><a href="/shop">Informasi Pengiriman</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link-contact">
+                            <h4>Hubungi Kami</h4>
+                            <ul>
+                                <li>
+                                    <p><i class="fas fa-map-marker-alt"></i>Alamat: Sukamahi RT 05 RW 06 <br>Ds. SagaraCipta,Kec. Ciparay<br> Kabupaten Bandung, Jawa Barat 40551 </p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-phone-square"></i>Telepon: <a href="/contact">+62-831-7623-5143</a></p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="/contact">MochililyShop@gmail.com</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer  -->
+
+    <!-- Start copyright  -->
+    <div class="footer-copyright">
+        <p class="footer-company">All Rights Reserved. &copy; 2025 <a href="/shop">MochililyShop</a> Design By :
+            <a href="/shop">html design</a></p>
+    </div>
+    <!-- End copyright  -->
+
+    <!-- ALL JS FILES -->
+    <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <!-- ALL PLUGINS -->
+    <script src="{{ url_for('static', filename='js/jquery.superslides.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-select.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/inewsticker.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootsnav.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/images-loded.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/isotope.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+</body>
+
+</html>
